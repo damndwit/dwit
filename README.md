@@ -1,43 +1,36 @@
-# Dwit Patel — IT & Healthcare Technology Portfolio
+# Dwit Patel | Software, AI & Technology Portfolio
 
-**Computer Science & IT | Healthcare IT • Desktop Support • IT Automation**
+Rutgers University, B.S. Computer Science
 
-Welcome! I'm developing a practical technical portfolio focused on diagnosing IT problems, supporting users, documenting solutions, and building reliable systems—especially in healthcare environments.
+I'm interested in building software that solves tangible problems. My work and interests span AI and prompt engineering, application development, IT systems, data analysis, and digital advertising for local businesses.
 
-> **Portfolio status:** In development. This repository currently contains a responsive portfolio website starter; project links will be added as implementations are completed and documented.
+This repository hosts my personal portfolio site, built in plain HTML and CSS. The projects below are **in development**, with separate repositories and demonstrations to follow.
 
-## What you'll find here
+## Six-project portfolio plan
 
-- [**Portfolio website source**](index.html) — a simple, responsive site built with HTML and CSS.
-- **Support and automation work** — Windows troubleshooting and PowerShell-based diagnostic workflows (planned).
-- **Healthcare IT scenarios** — simulated help desk workflows and inventory management (planned).
-- **Infrastructure labs** — service uptime monitoring and endpoint visibility (planned).
+| Project | What I'm building | Suggested open-source starting point |
+|---|---|---|
+| AI Support Copilot | A searchable troubleshooting assistant with prompt evaluation | [Streamlit LLM examples](https://github.com/streamlit/llm-examples) |
+| Healthcare Data Explorer | Interactive analytics with synthetic health records | [Synthea](https://github.com/synthetichealth/synthea) |
+| Windows IT Diagnostic Toolkit | Local diagnostics and exportable Windows reports | [WinUtil](https://github.com/ChrisTitusTech/winutil) (reference only; original diagnostic scripts preferred) |
+| Local Ads Performance Dashboard | Campaign performance and budget reports using mock or authorized exports | [Streamlit](https://github.com/streamlit/streamlit) |
+| Stock Research Dashboard | Historical price charts and fundamentals exploration | [yfinance](https://github.com/ranaroussi/yfinance) |
+| Full-Stack Project Tracker | An authenticated task-tracking API and web app | [Full Stack FastAPI Template](https://github.com/fastapi/full-stack-fastapi-template) |
 
-## Project roadmap
+**Project status:** These are ideas, not completed or published applications. Source licensing and dependencies must be reviewed before reuse. All medical data will be synthetic; financial dashboards are informational only; and ad analytics will use sample or authorized business data.
 
-| Project | Focus | Status |
-| --- | --- | --- |
-| Windows Support Diagnostic Toolkit | PowerShell, Windows troubleshooting, reports | Planned |
-| Healthcare Service Desk Lab | Ticket triage, documentation, simulated incidents | Planned |
-| IT Asset Inventory Lab | Hardware inventory and audit reporting | Planned |
-| Service Monitoring Dashboard | Docker, uptime checks, incident alerts | Planned |
+## Website
 
-Each completed project will have its **own repository**, original contributions, setup instructions, screenshots, and a clear explanation of what I built or modified.
+Open [index.html](index.html) locally, or view the [GitHub Pages site](https://damndwit.github.io/dwit/) if publication is enabled.
 
-## About this repository
+## Repository organization
 
-This is a **personal portfolio website starter**, not a completed technical application or GitHub profile README. The [`index.html`](index.html) file can be opened locally in a browser. Publishing it as a website requires enabling GitHub Pages in repository settings.
+- `index.html` — responsive portfolio landing page
+- `PROJECT_PLAN.md` — project scope, build sequence, and demo checklist
 
-### Run locally
+## Contact
 
-1. Clone this repository or download it as a ZIP.
-2. Open `index.html` in a modern web browser.
-3. No packages, API keys, or installation are required.
-
-## Connect
-
-- **GitHub:** [@damndwit](https://github.com/damndwit)
+[GitHub](https://github.com/damndwit)
 
 ---
-
-*This portfolio is intentionally honest about work in progress. Projects will only be featured as completed after they have working code and documentation.*
+This portfolio is a work in progress. Original implementations, licenses, and technical documentation will be published with the individual projects.
