@@ -6,6 +6,12 @@ I'm interested in building software that solves tangible problems. My work and i
 
 This repository hosts my personal portfolio site, built in plain HTML and CSS. The projects below are **in development**, with separate repositories and demonstrations to follow.
 
+## Featured working project
+
+**[LocalBiz AI Support Assistant](https://github.com/damndwit/localbiz-ai-support-chatbot)** — a customizable Python/Streamlit chatbot for fictional small-business FAQs, using TF-IDF NLP matching and safe fallbacks. The developer confirmed local operation; the public deployment is available for additional testing.
+
+[**Try the hosted chatbot**](https://localbiz-support-demo-dwit.streamlit.app/)
+
 ## Six-project portfolio plan
 
 | Project | What I'm building | Suggested open-source starting point |
