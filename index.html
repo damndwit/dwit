@@ -1,70 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dwit Patel — Rutgers computer science graduate. Software development, AI, and IT projects.">
+  <meta name="description" content="Dwit Patel — Rutgers Computer Science graduate.">
   <meta name="theme-color" content="#10151d">
   <title>Dwit Patel</title>
   <style>
-    :root { color-scheme: dark; --bg: #10151d; --text: #e9edf4; --subtle: #b1becb; --line: #2a3645; --link: #a5caff; }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-    .wrap { width: min(850px, calc(100% - 48px)); margin: 0 auto; }
-    a { color: var(--link); text-underline-offset: 4px; }
-    a:hover { color: #d7e7ff; }
-    a:focus-visible { outline: 2px solid var(--link); outline-offset: 5px; border-radius: 3px; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 27px 0; gap: 20px; border-bottom: 1px solid var(--line); }
-    nav .name { color: var(--text); font-weight: 700; text-decoration: none; }
-    nav .right { display: flex; gap: 24px; font-size: .95rem; }
-    nav .right a { color: var(--subtle); text-decoration: none; }
-    nav .right a:hover { color: var(--text); }
-    header { padding: 105px 0 78px; }
-    h1 { margin: 0 0 24px; font-size: clamp(2.5rem, 7vw, 4.4rem); line-height: 1.13; letter-spacing: -.055em; font-weight: 720; }
-    .intro { color: var(--subtle); font-size: 1.13rem; max-width: 700px; margin: 0; }
-    .education { font-size: .93rem; margin: 26px 0 0; }
-    main { padding-bottom: 95px; }
-    h2 { font-size: 1.45rem; margin: 0 0 8px; letter-spacing: -.03em; }
-    .project { padding: 29px 0; border-bottom: 1px solid var(--line); }
-    .project h3 { margin: 0 0 10px; font-size: 1.15rem; }
-    .project p { color: var(--subtle); margin: 0 0 15px; }
-    .links { display: flex; gap: 22px; font-size: .95rem; }
-    footer { border-top: 1px solid var(--line); padding: 26px 0 46px; color: var(--subtle); font-size: .9rem; }
-    @media (max-width: 540px) { header { padding: 70px 0 58px; } nav .right { gap: 16px; } }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    :root {color-scheme:dark;--bg:#10151d;--text:#e9edf4;--muted:#b2bdcb;--line:#2b3644;--link:#a5caff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+    .wrap{max-width:780px;width:calc(100% - 42px);margin:auto}
+    a{color:var(--link);text-underline-offset:4px}
+    a:hover{color:#e0edff}
+    a:focus-visible{outline:2px solid var(--link);outline-offset:4px}
+    nav{padding:26px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+    nav a{text-decoration:none}
+    .brand{color:var(--text);font-weight:700}
+    header{padding:90px 0 60px}
+    h1{font-size:clamp(2.5rem,7vw,4rem);letter-spacing:-.05em;line-height:1.1;margin:0 0 20px}
+    .intro{font-size:1.1rem;color:var(--muted);margin:0;max-width:660px}
+    main{padding-bottom:100px}
+    h2{font-size:1.4rem;margin:0 0 20px}
+    article{padding:22px 0;border-top:1px solid var(--line)}
+    article h3{font-size:1.2rem;margin:0 0 8px}
+    article p{color:var(--muted);margin:0 0 17px}
+    .links{display:flex;gap:22px;flex-wrap:wrap}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.88rem}
+    @media(max-width:550px){header{padding:65px 0 45px}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <nav aria-label="Main navigation">
-      <a class="name" href="#top">Dwit Patel</a>
-      <div class="right">
-        <a href="#projects">Projects</a>
-        <a href="https://github.com/damndwit">GitHub</a>
-      </div>
-    </nav>
+    <nav><a class="brand" href="#top">Dwit Patel</a><a href="https://github.com/damndwit">GitHub</a></nav>
     <header id="top">
       <h1>Hi, I'm Dwit.</h1>
-      <p class="intro">I graduated from Rutgers with a degree in Computer Science. I'm interested in software development, AI, and IT. I've also worked with local businesses on digital advertising.</p>
-      <p class="education">B.S. Computer Science · Rutgers University</p>
+      <p class="intro">I graduated from Rutgers with a degree in Computer Science. I'm interested in software development, AI, and IT, and I've also worked with local businesses on digital advertising.</p>
     </header>
-    <main id="projects">
-      <h2>Projects</h2>
-      <article class="project">
+    <main>
+      <h2>Project</h2>
+      <article>
         <h3>PatientPilot AI</h3>
-        <p>A healthcare navigation demo with fictional patient records, an AI assistant, and request workflows that require approval. Built with Python and Streamlit.</p>
+        <p>I built a healthcare navigation demo with fictional patient records, an AI assistant, and an approval step for requests. It's built with Python and Streamlit.</p>
         <div class="links">
           <a href="https://patientpilot-ai-dwit.streamlit.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
-          <a href="https://github.com/damndwit/patientpilot-ai-health-navigator" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-      </article>
-      <article class="project">
-        <h3>LocalBiz Support Chatbot</h3>
-        <p>A customizable chatbot for common customer questions. Built with Python, Streamlit, and natural language matching.</p>
-        <div class="links">
-          <a href="https://localbiz-support-demo-dwit.streamlit.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
-          <a href="https://github.com/damndwit/localbiz-ai-support-chatbot" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/damndwit/patientpilot-ai-health-navigator" target="_blank" rel="noopener noreferrer">Source code</a>
         </div>
       </article>
     </main>
