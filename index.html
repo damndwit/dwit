@@ -1,54 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dwit Patel — Rutgers Computer Science graduate.">
-  <meta name="theme-color" content="#10151d">
-  <title>Dwit Patel</title>
+  <meta name="theme-color" content="#101215">
+  <meta name="description" content="Dwit Patel — computer science student, full-stack projects, IT support, and digital marketing. Explore Workbase, PatientPilot AI, and LocalBiz.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dwit Patel | Projects & Experience">
+  <meta property="og:description" content="Full-stack development, IT support and digital marketing. See my projects and what I've been working on.">
+  <title>Dwit Patel — Projects & Experience</title>
   <style>
-    :root {color-scheme:dark;--bg:#10151d;--text:#e9edf4;--muted:#b2bdcb;--line:#2b3644;--link:#a5caff}
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
-    .wrap{max-width:780px;width:calc(100% - 42px);margin:auto}
-    a{color:var(--link);text-underline-offset:4px}
-    a:hover{color:#e0edff}
-    a:focus-visible{outline:2px solid var(--link);outline-offset:4px}
-    nav{padding:26px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-    nav a{text-decoration:none}
-    .brand{color:var(--text);font-weight:700}
-    header{padding:90px 0 60px}
-    h1{font-size:clamp(2.5rem,7vw,4rem);letter-spacing:-.05em;line-height:1.1;margin:0 0 20px}
-    .intro{font-size:1.1rem;color:var(--muted);margin:0;max-width:660px}
-    main{padding-bottom:100px}
-    h2{font-size:1.4rem;margin:0 0 20px}
-    article{padding:22px 0;border-top:1px solid var(--line)}
-    article h3{font-size:1.2rem;margin:0 0 8px}
-    article p{color:var(--muted);margin:0 0 17px}
-    .links{display:flex;gap:22px;flex-wrap:wrap}
-    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.88rem}
-    @media(max-width:550px){header{padding:65px 0 45px}}
+    :root {
+      color-scheme: dark;
+      --bg: #101215;
+      --surface: #191c20;
+      --surface-2: #1e2228;
+      --border: #30353c;
+      --text: #f3f0e9;
+      --muted: #b0b4bd;
+      --subtle: #9098a4;
+      --accent: #e7ba7b;
+      --mint: #91cdb0;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #6d5134; color: #fff; }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+    .wrap { width: min(1040px, calc(100% - 48px)); margin: 0 auto; }
+    .skip { position: absolute; top: -80px; left: 20px; padding: 10px 16px; background: var(--accent); color: #121212; z-index: 2; }
+    .skip:focus { top: 12px; }
+    .mono, .kicker, .section-label, .project-num, .meta { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    .site-nav { border-bottom: 1px solid var(--border); }
+    .nav-inner { min-height: 75px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { font-size: 18px; text-decoration: none; font-weight: 750; letter-spacing: -.6px; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 27px; flex-wrap: wrap; }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 550; }
+    .nav-links a:hover { color: var(--accent); }
+    .hero { padding: 112px 0 94px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: minmax(0,1.35fr) minmax(260px,.65fr); align-items: end; gap: 60px; }
+    .kicker, .section-label { color: var(--accent); font-size: 11px; font-weight: 650; letter-spacing: 1.8px; text-transform: uppercase; }
+    h1 { font-size: clamp(50px, 8vw, 86px); line-height: 1.06; letter-spacing: -.075em; font-weight: 725; margin: 19px 0 22px; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-copy { max-width: 600px; font-size: clamp(17px, 2vw, 20px); color: #c4c7cd; margin: 0; line-height: 1.65; }
+    .hero-actions, .project-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 680; font-size: 13px; border: 1px solid var(--border); border-radius: 10px; padding: 12px 17px; transition: background .16s, border-color .16s; }
+    .button.primary { background: var(--accent); color: #191816; border-color: var(--accent); }
+    .button.primary:hover { background: #f4cd96; }
+    .button.secondary:hover, .project-links a:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-aside { border: 1px solid var(--border); padding: 25px; border-radius: 15px; background: linear-gradient(155deg, #20232a, #16191d); }
+    .hero-aside .meta { color: var(--subtle); font-size: 11px; letter-spacing: .6px; }
+    .hero-aside p { color: var(--muted); font-size: 13px; margin: 13px 0 0; }
+    .hero-aside strong { font-size: 19px; font-weight: 670; display: block; margin: 5px 0 0; }
+    .status { display: flex; align-items: center; gap: 8px; color: var(--mint); font-size: 12px; margin-bottom: 24px; font-weight: 550; }
+    .status::before { content: ""; height: 7px; width: 7px; border-radius: 50%; background: var(--mint); }
+    .hero-aside hr { border: none; border-top: 1px solid var(--border); margin: 23px 0; }
+    section.section { padding: 86px 0; border-bottom: 1px solid var(--border); scroll-margin-top: 25px; }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: baseline; margin-bottom: 33px; }
+    h2 { font-size: clamp(27px, 4vw, 37px); letter-spacing: -.045em; line-height: 1.2; margin: 8px 0 0; font-weight: 690; }
+    .section-note { color: var(--subtle); font-size: 13px; margin: 0; }
+    .project-list { display: grid; gap: 16px; }
+    .project-card { padding: 31px; border: 1px solid var(--border); border-radius: 15px; background: var(--surface); }
+    .project-top { display: flex; justify-content: space-between; gap: 18px; align-items: center; }
+    .project-num { font-size: 11px; letter-spacing: 1px; color: var(--accent); }
+    .pill { display: inline-flex; align-items: center; border: 1px solid #495246; color: #b7d6bf; background: #223027; border-radius: 99px; padding: 4px 11px; font-size: 11px; font-weight: 640; white-space: nowrap; }
+    .pill.prototype { background: #29271e; border-color: #57503b; color: #e0c997; }
+    .project-card h3 { font-size: clamp(22px, 3vw, 27px); letter-spacing: -.9px; margin: 15px 0 8px; font-weight: 690; }
+    .project-card p { color: var(--muted); font-size: 14px; margin: 0; max-width: 750px; line-height: 1.75; }
+    .stack { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 19px; }
+    .stack span { display: inline-block; color: #c5c9d0; background: #272c32; border: 1px solid #343a42; padding: 5px 9px; border-radius: 6px; font-size: 11px; }
+    .project-links { gap: 11px; margin-top: 23px; }
+    .project-links a { text-decoration: none; border: 1px solid #434951; padding: 9px 13px; border-radius: 8px; font-size: 12px; font-weight: 640; }
+    .grid-two { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 30px; }
+    .about-text { font-size: 15px; color: var(--muted); margin: 0; max-width: 760px; }
+    .about-text + .about-text { margin-top: 14px; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 32px; }
+    .skill-group { border: 1px solid var(--border); padding: 23px; border-radius: 12px; background: #181b20; }
+    .skill-group h3 { margin: 0 0 12px; color: var(--accent); font-size: 12px; font-weight: 650; letter-spacing: .2px; }
+    .skill-group p { color: #cdd1d7; font-size: 13px; margin: 0; }
+    .timeline { margin-top: 33px; }
+    .timeline-item { display: grid; grid-template-columns: 200px minmax(0,1fr); gap: 28px; padding: 23px 0; border-top: 1px solid var(--border); }
+    .timeline-item .when { color: var(--subtle); font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+    .timeline-item h3 { margin: 0 0 5px; font-size: 16px; font-weight: 690; }
+    .timeline-item .where { font-size: 13px; color: var(--accent); margin: 0 0 6px; }
+    .timeline-item p { color: var(--muted); font-size: 13px; margin: 0; }
+    .education { margin-top: 28px; padding: 25px; border: 1px solid var(--border); border-radius: 13px; background: var(--surface); }
+    .education h3 { margin: 0 0 12px; font-size: 16px; }
+    .education p { margin: 7px 0; color: var(--muted); font-size: 13px; }
+    .education strong { color: var(--text); }
+    .contact { padding: 86px 0 100px; }
+    .contact p { color: var(--muted); max-width: 620px; margin: 14px 0 0; font-size: 15px; }
+    footer { border-top: 1px solid var(--border); padding: 25px 0 34px; display: flex; justify-content: space-between; gap: 18px; color: var(--subtle); font-size: 12px; }
+    footer a { text-decoration: none; color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding: 76px 0 65px; gap: 30px; }
+      .hero-aside { max-width: 430px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+      .section-note { display: none; }
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: 12px; }
+      .grid-two { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 32px, 1040px); }
+      .nav-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding: 16px 0; gap: 11px; }
+      .hero { padding-top: 65px; }
+      section.section, .contact { padding: 62px 0; }
+      .project-card { padding: 22px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 3px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <nav><a class="brand" href="#top">Dwit Patel</a><a href="https://github.com/dwitdev">GitHub</a></nav>
-    <header id="top">
-      <h1>Hi, I'm Dwit.</h1>
-      <p class="intro">I graduated from Rutgers with a degree in Computer Science. I'm interested in software development, AI, and IT, and I've also worked with local businesses on digital advertising.</p>
-    </header>
-    <main>
-      <h2>Project</h2>
-      <article>
-        <h3>PatientPilot AI</h3>
-        <p>I built a healthcare navigation demo with fictional patient records, an AI assistant, and an approval step for requests. It's built with Python and Streamlit.</p>
-        <div class="links">
-          <a href="https://patientpilot-ai-dwit.streamlit.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
-          <a href="https://github.com/dwitdev/patientpilot-ai-health-navigator" target="_blank" rel="noopener noreferrer">Source code</a>
-        </div>
-      </article>
-    </main>
-    <footer>© 2026 Dwit Patel</footer>
+<body id="top">
+  <a href="#main" class="skip">Skip to content</a>
+  <div class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">dwit<span>.</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About &amp; skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </div>
+  <main id="main" class="wrap">
+    <header class="hero">
+      <div>
+        <span class="kicker">Dwit Patel / New Jersey</span>
+        <h1>Hi, I'm Dwit<em>.</em></h1>
+        <p class="hero-copy">I like building practical web apps, figuring out how things work behind the scenes, and making technology easier to use.</p>
+        <p class="hero-copy" style="font-size:15px;margin-top:15px">Computer Science at Rutgers University. My work spans full-stack development, IT support, and digital marketing for local businesses.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">See my projects <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="https://github.com/dwitdev" target="_blank" rel="noopener noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="Current focus">
+        <div class="status">Building and learning</div>
+        <span class="meta">CURRENT FOCUS</span>
+        <strong>Full-stack development</strong>
+        <p>React on the frontend, Python APIs on the backend, and real databases connecting everything.</p>
+        <hr>
+        <span class="meta">ALSO WORKING WITH</span>
+        <p>IT support, cloud deployments, and Google / Meta advertising.</p>
+      </aside>
+    </header>
+
+    <section class="section" id="projects">
+      <div class="section-head">
+        <div><span class="section-label">01 / My work</span><h2>Projects I've built</h2></div>
+        <p class="section-note">Live apps + source code</p>
+      </div>
+      <div class="project-list">
+        <article class="project-card">
+          <div class="project-top"><span class="project-num">PROJECT 01 / FULL-STACK</span><span class="pill">Live app</span></div>
+          <h3>Workbase — Ticketing &amp; Client Management</h3>
+          <p>I started Workbase because I wanted one place for freelance clients, website projects, and support requests. It has accounts, team roles, a ticket queue with notes, client/project records, and a dashboard. The public guest view uses sample data, while registered workspaces can save their own records.</p>
+          <div class="stack" aria-label="Workbase technologies">
+            <span>React</span><span>TypeScript</span><span>FastAPI</span><span>PostgreSQL</span><span>SQLModel</span><span>Docker</span><span>Render</span>
+          </div>
+          <div class="project-links">
+            <a href="https://workbaseticket.onrender.com/" target="_blank" rel="noopener noreferrer">Open website ↗</a>
+            <a href="https://github.com/dwitdev/workbase-platform" target="_blank" rel="noopener noreferrer">View code ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top"><span class="project-num">PROJECT 02 / HEALTH TECH</span><span class="pill prototype">Prototype</span></div>
+          <h3>PatientPilot AI — Healthcare Navigator</h3>
+          <p>A Python web app built around fictional patient records. I combined record search, an optional Gemini-powered assistant, a FHIR sandbox explorer, and a workflow for drafting and approving sample requests. The care actions are simulations, not real medical transactions.</p>
+          <div class="stack" aria-label="PatientPilot technologies">
+            <span>Python</span><span>Streamlit</span><span>Gemini API</span><span>FHIR-style JSON</span><span>REST APIs</span>
+          </div>
+          <div class="project-links">
+            <a href="https://patientpilot-ai-dwit.streamlit.app/" target="_blank" rel="noopener noreferrer">Try the app ↗</a>
+            <a href="https://github.com/dwitdev/patientpilot-ai-health-navigator" target="_blank" rel="noopener noreferrer">View code ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top"><span class="project-num">PROJECT 03 / NLP</span><span class="pill prototype">Prototype</span></div>
+          <h3>LocalBiz — FAQ Support Chatbot</h3>
+          <p>A simple support chatbot for a fictional local café. It matches customer questions to approved answers using TF-IDF and cosine similarity, with a fallback when it isn't confident. This one uses traditional NLP rather than a generative AI model.</p>
+          <div class="stack" aria-label="LocalBiz technologies">
+            <span>Python</span><span>Streamlit</span><span>scikit-learn</span><span>TF-IDF</span><span>Cosine similarity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://localbiz-support-demo-dwit.streamlit.app/" target="_blank" rel="noopener noreferrer">Try the chatbot ↗</a>
+            <a href="https://github.com/dwitdev/localbiz-ai-support-chatbot" target="_blank" rel="noopener noreferrer">View code ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <span class="section-label">02 / About</span>
+      <h2>What I'm into</h2>
+      <p class="about-text" style="margin-top:19px">I enjoy working on both sides of an application—getting the interface right and then figuring out the backend, database, and deployment. Most of what I've learned has come from building something, testing it, breaking it, and improving it.</p>
+      <p class="about-text">I also have a background in hands-on IT support and digital advertising, so I like projects that solve problems people actually run into.</p>
+      <div class="skills-grid">
+        <div class="skill-group"><h3>Frontend</h3><p>React, TypeScript, JavaScript, HTML, CSS, Vite, responsive design</p></div>
+        <div class="skill-group"><h3>Backend &amp; data</h3><p>Python, FastAPI, REST APIs, SQL, PostgreSQL, SQLModel, Pydantic</p></div>
+        <div class="skill-group"><h3>Tools &amp; deployment</h3><p>Git, GitHub, GitHub Actions, Docker, Render, Neon, pytest</p></div>
+        <div class="skill-group"><h3>Other experience</h3><p>Windows and Microsoft 365 support, device troubleshooting, Google Ads, Meta Ads, Streamlit</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <span class="section-label">03 / Background</span>
+      <h2>Experience &amp; education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="when">2026 — Present</span>
+          <div><h3>IT Desk Support</h3><p class="where">Novitium Pharma</p><p>Supporting Windows workstations, user accounts, Microsoft 365, printers, and everyday technical issues.</p></div>
+        </div>
+        <div class="timeline-item">
+          <span class="when">2020 — 2026</span>
+          <div><h3>Operations Technology &amp; Equipment Support</h3><p class="where">Amazon</p><p>Worked across operations and equipment roles, including device support, hardware troubleshooting, asset coordination, and technical issue triage.</p></div>
+        </div>
+        <div class="timeline-item">
+          <span class="when">2021 — Present</span>
+          <div><h3>Freelance Digital Marketing</h3><p class="where">Independent projects</p><p>Google and Meta ad campaigns, audience research, campaign reporting, and communication with local business clients.</p></div>
+        </div>
+      </div>
+      <div class="education">
+        <h3>Education</h3>
+        <p><strong>Rutgers University</strong> — Computer Science (degree in progress)</p>
+        <p><strong>Mercer County Community College</strong> — Associate degree in Computer Science</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <span class="section-label">04 / Get in touch</span>
+      <h2>Want to connect?</h2>
+      <p>The best place to find my latest work is GitHub. You can check out the repos, see how the projects are built, and reach me through my profile.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/dwitdev" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a>
+        <a class="button secondary" href="#top">Back to top ↑</a>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <span>© 2026 Dwit Patel</span>
+    <span>Built with HTML &amp; CSS · <a href="https://github.com/dwitdev/dwit" target="_blank" rel="noopener noreferrer">Site source</a></span>
+  </footer>
 </body>
 </html>
